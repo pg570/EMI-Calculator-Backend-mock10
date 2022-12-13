@@ -6,7 +6,7 @@ const cors = require("cors");
 
 dotenv.config();
 
-// const users = require("./features/users/users.route");
+const users = require("./features/users/users.route");
 mongoose.set('strictQuery', true);
 const PORT = process.env.PORT || 8080;
 
@@ -20,7 +20,7 @@ app.use(
 
 app.use(express.json());
 
-// app.use("/api/users", users);
+app.use("/users", users);
 
 app.use("/", function (req, res) {
   res.send("Home Page");
